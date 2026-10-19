@@ -1,0 +1,12 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Exported Docker images (docker save)
+*.tar
+
+# Local env / tooling
+.env
+.vercel/
+npm-debug.log*
+.DS_Store

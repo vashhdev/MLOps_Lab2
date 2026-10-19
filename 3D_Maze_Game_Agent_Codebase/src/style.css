@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {  
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  background: #0e0e1a; 
+}
+
+canvas.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.hud {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(8, 8, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f8ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.2s ease;
+}
+
+.hud h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.hud-section {
+  margin-bottom: 0.5rem;
+}
+
+.hud-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.hud button {
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(30, 30, 60, 0.9);
+  color: #f8f8ff;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.hud button:hover {
+  background: rgba(70, 70, 120, 0.95);
+}
+
+.hud.hud-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.episodes-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.episodes-input-group label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.episodes-input-group input {
+  width: 4.2rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 30, 0.9);
+  color: #f8f8ff;
+  font-size: 0.75rem;
+}
+
+#maze-select {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 30, 0.9);
+  color: #f8f8ff;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+} 
+
+#difficulty-select {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 30, 0.9);
+  color: #f8f8ff;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(80, 80, 160, 0.4), transparent 55%)
+    , radial-gradient(circle at bottom, rgba(10, 10, 30, 0.95), #050510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+
+.intro-overlay.intro-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-panel {
+  width: min(560px, 90vw);
+  max-height: 90vh;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1rem;
+  background: rgba(4, 4, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f8ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  overflow-y: auto;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6);
+}
+
+.intro-panel h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.4rem;
+}
+
+.intro-subtitle {
+  margin: 0 0 0.9rem 0;
+  opacity: 0.85;
+}
+
+.intro-section {
+  margin-top: 0.9rem;
+}
+
+.intro-section h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.intro-section ul {
+  margin: 0 0 0.3rem 1.1rem;
+  padding: 0;
+}
+
+.intro-section li {
+  margin-bottom: 0.2rem;
+}
+
+.intro-start {
+  margin-top: 0.9rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(90deg, #3f82ff, #9146ff);
+  color: #f8f8ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.intro-start:hover {
+  filter: brightness(1.08);
+}
+
+.intro-hint {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}

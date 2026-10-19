@@ -1,0 +1,8 @@
+services:
+  maze-rl-agent:
+    build: ./3D_Maze_Game_Agent_Codebase
+    image: maze-rl-agent:local
+    container_name: maze-rl-agent
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
